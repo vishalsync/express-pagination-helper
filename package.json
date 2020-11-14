@@ -1,0 +1,25 @@
+{
+  "name": "express-pagination-helper",
+  "version": "1.0.0",
+  "description": "This package help you with generating pagination info, like meta data and links.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vishalsync/express-pagination-helper.git"
+  },
+  "keywords": [
+    "pagination",
+    "generator",
+    "express-pagination",
+    "pagination-helper"
+  ],
+  "author": "Vishal Singh",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vishalsync/express-pagination-helper/issues"
+  },
+  "homepage": "https://github.com/vishalsync/express-pagination-helper#readme"
+}
