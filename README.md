@@ -38,10 +38,9 @@ const controller = ( req, res, next ) => {
 
 express-pagination-helper support few options:
 
-* {
-    req: "pass request or req object you get in your controller or function.  [ REQUIRED ]",
-    total_data_count: "This is total count or number of your data or records. [ REQUIRED ]",
-    page_number: "Pass the current page number or requested page number. (eg:- page_number: 1). [ REQUIRED ]",
-    data_per_page: "Pass how many data you want to show per page. (eg:- data_per_page: 10).     [ OPTIONAL ]",
-}
+* req: "pass request or req object you get in your controller or function.  [ REQUIRED ]".
+* total_data_count: "This is total count or number of your data or records. [ REQUIRED ]".
+* page_number: "Pass the current page number or requested page number. (eg:- page_number: 1) [ REQUIRED ]".
+* data_per_page: "Pass how many data you want to show per page. (eg:- data_per_page: 10). [ OPTIONAL ]".
+
 
