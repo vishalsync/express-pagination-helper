@@ -4,26 +4,12 @@ This package help you with generating pagination info, like meta data and links.
 You just have to import this module. And pass some information to the function.
 And this packages is going to calculate page number etc for you.
 
-"pagination": {
-    "page_number": 1,
-    "data_per_page": 10,
-    "total_page_count": 5,
-    "total_data_count": 50,
-    "links": {
-        "self": "http://localhost:5003/v1/vendor/parkingspot?page_number=1&data_per_page=10",
-        "previous": "http://localhost:5003/v1/vendor/parkingspot?page_number=1&data_per_page=10",
-        "next": "http://localhost:5003/v1/vendor/parkingspot?page_number=2&data_per_page=10",
-        "first": "http://localhost:5003/v1/vendor/parkingspot?page_number=1&data_per_page=10",
-        "last": "http://localhost:5003/v1/vendor/parkingspot?page_number=5&data_per_page=10"
-    }
-},
-
-
 
 # Installation
 
 `npm i express-pagination-helper --save`
 
+Then...
 
 ...
 
@@ -42,6 +28,8 @@ const controller = ( req, res, next ) => {
     });
 
 }//End of controller
+
+
 
 ...
 
