@@ -12,7 +12,6 @@ And this packages is going to calculate page number etc for you.
 Then...
 
 ...
-
 const expressPaginationHelper = require("express-pagination-helper");
 
 const controller = ( req, res, next ) => {
@@ -28,9 +27,6 @@ const controller = ( req, res, next ) => {
     });
 
 }//End of controller
-
-
-
 ...
 
 

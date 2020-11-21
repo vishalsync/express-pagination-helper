@@ -16,6 +16,16 @@ const express_pagination_helper = ( configuration ) => {
     };
 
     /**
+     * Setting up required option to calculate pagination.
+     */
+    const req              = configuration.req;//req.object
+    let total_data_count = +(configuration.total_data_count || req.total_data_count);//Total number of records.
+    const data_per_page      = +(req.query.data_per_page    || configuration.data_per_page || req.data_per_page || 10);//Calculating data per page.
+    const page_number      = +(req.query.page_number      || configuration.page_number   || req.page_number   || 1);//Current page number..
+
+    if ( isNaN(total_data_count) ) total_data_count = 0;
+
+    /**
      * Validating pagination object
      */
     const errorMsg = "Above pagination option you have to pass to this express_pagination_helper function.";
@@ -25,32 +35,20 @@ const express_pagination_helper = ( configuration ) => {
         throw Error( errorMsg );
     }
 
-    if ( !configuration.req ) {
-        console.table( configuration_info);
-        throw Error( errorMsg );
-    };
-
-    if ( !configuration.total_data_count ) {
+    if ( !req || total_data_count === null || total_data_count === undefined) {
         console.table( configuration_info);
         throw Error( errorMsg );
     };
 
     /**
-     * Validating pagination object
+     * End of Validating pagination object
      */
-
-    /**
-     * Setting up required option to calculate pagination.
-     */
-    const req              = configuration.req;//req.object
-    const total_data_count = +(configuration.total_data_count) || +(req.total_data_count);//Total number of records.
-    const data_per_page    = +(configuration.data_per_page) || Math.abs(+(req.query.data_per_page)) || 10;//Calculating data per page.
-    const page_number      = +(configuration.page_number)   || Math.abs(+(req.query.page_number))   || 1;//Current page number..
 
     const total_page_count = Math.ceil(total_data_count / data_per_page);//Calculating total number of page.
 
     //BASE URL
     const baseUrl = `${req.protocol}://${req.headers.host}${req.baseUrl}${req.route.path}`;
+
 
     /**
      * Calculating next page number
