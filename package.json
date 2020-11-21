@@ -1,6 +1,6 @@
 {
   "name": "express-pagination-helper",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "description": "This package help you with generating pagination info, like meta data and links.",
   "main": "index.js",
   "scripts": {
