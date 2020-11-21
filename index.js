@@ -15,16 +15,9 @@ const express_pagination_helper = ( configuration ) => {
         data_per_page: "Pass how many data you want to show per page. (eg:- data_per_page: 10).     [ OPTIONAL ]",
     };
 
-    /**
-     * Setting up required option to calculate pagination.
-     */
-    const req              = configuration.req;//req.object
-    let total_data_count = +(configuration.total_data_count || req.total_data_count);//Total number of records.
-    const data_per_page      = +(req.query.data_per_page    || configuration.data_per_page || req.data_per_page || 10);//Calculating data per page.
-    const page_number      = +(req.query.page_number      || configuration.page_number   || req.page_number   || 1);//Current page number..
+    console.log( isNaN(+(configuration.total_data_count)) );
 
-    if ( isNaN(total_data_count) ) total_data_count = 0;
-
+    
     /**
      * Validating pagination object
      */
@@ -35,14 +28,24 @@ const express_pagination_helper = ( configuration ) => {
         throw Error( errorMsg );
     }
 
-    if ( !req || total_data_count === null || total_data_count === undefined) {
+    if ( !configuration.req || isNaN(configuration.total_data_count)) {
         console.table( configuration_info);
         throw Error( errorMsg );
     };
 
+
+
     /**
      * End of Validating pagination object
      */
+
+     /**
+     * Setting up required option to calculate pagination.
+     */
+    const req              = configuration.req;//req.object
+    const total_data_count = isNaN(+(configuration.total_data_count)) ? 0 : +(configuration.total_data_count);//Total number of records.
+    const data_per_page    = +(req.query.data_per_page    || configuration.data_per_page || 10);//Calculating data per page.
+    const page_number      = +(req.query.page_number      || configuration.page_number   || 1);//Current page number..
 
     const total_page_count = Math.ceil(total_data_count / data_per_page);//Calculating total number of page.
 
