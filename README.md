@@ -1,8 +1,8 @@
 # Why you should use this?
 
-This package help you with generating pagination info, like meta data and links.
+This package helps you with generating pagination info, like meta data and links.
 You just have to import this module. And pass some information to the function.
-And this packages is going to calculate page number etc for you.
+And this packages is going to calculate page numbers etc for you.
 
 
 # Installation
@@ -17,7 +17,7 @@ const expressPaginationHelper = require("express-pagination-helper");
 
 const controller = ( req, res, next ) => {
 
-    const = pagination = paginationHelper({
+    const = pagination = expressPaginationHelper({
         req: req, 
         total_data_count: 50, 
         page_number: 1
